@@ -5,12 +5,19 @@
  BARVY
  pozadi     #f5f5f5
  Jedeme retro cernobile, dnes barvy nepotrebujeme.
+
+ Mobilní verze - šířka do 500px
+==============================
+- všechno je pod sebou v jedné úzké nudli
+- v menu jsou položky pod sebou, menu samotné je nad obsahem
+- v galerii jsou všechny obrázky pod sebou
+- popisky k obrázkům jsou vždy pod obrázkem (k těm v textu i k těm v galerii)
 */
 
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     background-color: #f5f5f5;
     font-family: 'Merriweather', serif;
     font-size: 16px;
@@ -22,18 +29,67 @@ body {
 
 .titulek {
     font-family: 'Raleway', serif;
+    padding: 10px;
+
 }
+
+.perex {
+    font-family: 'Raleway', serif;
+    padding: 10px;
+}
+
+.autor {
+    font-family: 'Raleway', serif;
+    font-size: 10px;
+    padding: 10px;
+
+}
+
+.hlavicka {
+    background-image: url(images/island-hlavicka.jpg);
+    background-size: cover;
+    color: white;
+    text-align: center;
+
+}
+ 
+
 
 
 /* MENU */
 
+li {
+    list-style: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Raleway', serif;
+    color: grey;
+    text-decoration-color: grey;
 
+
+}
+
+a:link, a:visited {text-decoration: none}   
+
+a {
+    color: gray;
+}
 
 
 /* OBSAH */
 
+p h2 {
+    font-family: 'Raleway', serif;
+}
 
+img {
+    height: 200px;
+}
 
+.popisek {
+    color: gray;
+    text-align: center;
+}
 
 /* FOTOGALERIE */
 
@@ -41,3 +97,9 @@ body {
 
 
 /* PATICKA */
+
+.paticka {
+    background-color: gainsboro;
+    color: grey;
+    background-image: linear-gradient(gainsboro, white );
+}
