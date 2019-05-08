@@ -12,6 +12,26 @@
 - v menu jsou položky pod sebou, menu samotné je nad obsahem
 - v galerii jsou všechny obrázky pod sebou
 - popisky k obrázkům jsou vždy pod obrázkem (k těm v textu i k těm v galerii)
+
+Tabletové verze - šířka 500px až 1000px
+=======================================
+- skoro všechno je pod sebou
+- v menu jsou položky vedle sebe, menu samotné je nad obsahem
+- v galerii jsou vždy 2 obrázky vedle sebe (obrázků je 9, zbyde ti na konci jeden prázdný obdélníček)
+- popisky k obrázkům v textu jsou uvnitř obrázku blízko k jeho pravému dolnímu rohu
+- popisky k obrázkům v galerii jsou skryté (proč si ukážeme později - animace!!!)
+
+Počitačová verze - šířka nad 1000px
+=======================================
+- hlavička s obrázkem na pozadí je přes celou šířku stránky
+- obsah je v bílém pruhu uprostřed stránky omezeném na šířku 960px
+- bílý obdélník s obsahem je vysunutý kousek nahoru do obrázku (věděla jsi, že margin může být i záporné číslo?)
+- v menu jsou položky pod sebou, menu je omezené na úzký proužek a je vlevo od úvodního odstavce textu (menu -> float, text -> padding-left?)
+- jednotlivé "sekce" s textem mají v počítačové verzi vždy na jedné straně odsazení pomocí paddingu - všimni si, že se to střídá a jendou je to vpravo a pak zase vlevo, aby web vypadal vizuálně zajímavě
+- v galerii jsou vždy 3 obrázky vedle sebe 
+- popisky k obrázkům v textu jsou stejné jako v tabletové verzi (uvnitř obrázku)
+- popisky k obrázkům v galerii jsou stejné jako v tabletové verzi (skryté)
+
 */
 
 
@@ -65,9 +85,8 @@ li {
     font-family: 'Raleway', serif;
     color: grey;
     text-decoration-color: grey;
-
-
 }
+ 
 
 a:link, a:visited {text-decoration: none}   
 
@@ -102,4 +121,103 @@ img {
     background-color: gainsboro;
     color: grey;
     background-image: linear-gradient(gainsboro, white );
+}
+
+
+@media (min-width: 500px) {
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline;
+        border: 1px grey;
+    }
+    a {
+        padding: 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+    .foto {
+        float: left;
+        width: 33.333%;
+    }
+
+    .foto img {
+        display: block;
+    }
+    
+    .popisek {
+        text-align: left;
+        font-size: 10px;
+    }
+    
+}
+
+
+@media (min-width: 1000px) {
+    li {
+        text-transform: uppercase;
+        font-family: 'Raleway', serif;
+        color: grey;
+        text-decoration-color: grey;
+    }
+     
+    
+    a:link, a:visited {text-decoration: none}   
+    
+    a {
+        color: gray;
+    }
+
+
+
+
+    .foto img {
+        display: block;
+        margin: 0px;
+    }
+    
+    .foto {
+        width: 400px;
+        height: 225px;
+        overflow: hidden;
+        margin: 0px;
+    }
+    
+    .popisek {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        text-align: center;
+        padding: 2px;
+        transition: 0.5s;
+    }
+    
+    .foto:hover .popisek {
+        transform: translate(0, -100%);
+        transition: 0.5s;
+    }
+    
+    .foto:hover img {
+        transform: scale(1.2);
+        transition: 0.5s;
+    }
+    
+    
+    .nazev { 
+        font-weight: bold;
+    }
+    
+    .copyright {
+        font-size: 11px;
+    }
+    
+    .copyright a {
+        color: white;
+    }
+
+    .paticka {
+        float: left;
+        width: 2000px;
+    }
+    
 }
